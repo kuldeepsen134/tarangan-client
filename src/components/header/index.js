@@ -1,5 +1,5 @@
 import React from "react";
-import { cart, logo } from "../../images";
+import { logo } from "../../images";
 
 const Header = () => {
 	return (
@@ -28,12 +28,22 @@ const Header = () => {
 							</div>
 							<div className="col-10">
 								<ul className="nav justify-content-end">
-									<li className="nav-item"><a href="" className="nav-link">Nakshatra Technohub</a></li>
-									<li className="nav-item"><a href="" className="nav-link">Nakshatra Creation</a></li>
-									<li className="nav-item"><a href="" className="nav-link">MAK Industries</a></li>
-									<li className="nav-item"><a href="" className="nav-link">Nakshatra Technology</a></li>
-									<li className="nav-item"><a href="" className="nav-link">StayHappy</a></li>
+									<li className="nav-item"><a href="" className="nav-link">Tarangan Solutions</a></li>
+									<li className="nav-item"><a href="" className="nav-link">Tarangan Gadgets</a></li>
+									<li className="nav-item"><a href="" className="nav-link">Hobelf printing</a></li>
+									<li className="nav-item"><a href="" className="nav-link">Software products</a></li>
+									<li className="nav-item"><a href="" className="nav-link">Dedicated Resources</a></li>
+									<li className="nav-item"><a href="" className="nav-link">E-Commerce</a></li>
 									{/* <li className="nav-item"><a href="" className="nav-link"><img src={cart} alt="" className="img-fluid"/></a></li> */}
+									<div class="dropdown">
+										<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+											Dropdown button
+										</button>
+										<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+											<li><a class="dropdown-item" href="/login">Login</a></li>
+											<li><a class="dropdown-item" href="/signUp">Register</a></li>
+										</ul>
+									</div>
 								</ul>
 							</div>
 						</div>
