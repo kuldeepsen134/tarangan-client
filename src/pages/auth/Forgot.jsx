@@ -1,40 +1,45 @@
-import React from 'react'
+import React from "react";
 
 const Forgot = () => {
   return (
-    <div className="card text-center" style={{ width: 300 }}>
-    <div className="card-header h5 text-white bg-primary">Password Reset</div>
-    <div className="card-body px-5">
-      <p className="card-text py-2">
-        Enter your email address and we'll send you an email with instructions to
-        reset your password.
-      </p>
-      <div data-mdb-input-init="" className="form-outline">
-        <input type="email" id="typeEmail" className="form-control my-3" />
-        <label className="form-label" htmlFor="typeEmail">
-          Email input
-        </label>
-      </div>
-      <a
-        href="/forgotPassword"
-        data-mdb-button-init=""
-        data-mdb-ripple-init=""
-        className="btn btn-primary w-100"
-      >
-        Reset password
-      </a>
-      <div className="d-flex justify-content-between mt-4">
-        <a className="" href="/login">
-          Login
-        </a>
-        <a className="" href="/signUp">
-          Register
-        </a>
-      </div>
-    </div>
-  </div>
-  
-  )
-}
+    <section className="vh-100">
+      <div className="container-fluid h-custom">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col-md-9 col-lg-6 col-xl-5">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              className="img-fluid"
+              alt="Sample image"
+            />
+          </div>
+          <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form>
+              <div data-mdb-input-init="" className="form-outline mb-4">
+                <input
+                  type="email"
+                  id="form3Example3"
+                  className="form-control form-control-lg"
+                  placeholder="Enter a valid email address"
+                />
+              </div>
 
-export default Forgot
+              <div className="text-center text-lg-start mt-4 pt-2">
+                <button
+                  type="button"
+                  data-mdb-button-init=""
+                  data-mdb-ripple-init=""
+                  className="btn btn-primary btn-lg"
+                  style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Forgot;
