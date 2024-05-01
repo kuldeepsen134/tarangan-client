@@ -13,8 +13,8 @@ const Footer = () => {
 										<h3>
 											Nakshatra Technohub (India) Pvt. Ltd.
 										</h3>
-										<li className="nav-items"><a href="" className="nav-link">About us</a></li>
-										<li className="nav-items"><a href="" className="nav-link">Careers</a></li>
+										<li className="nav-items"><a href="/aboutus" className="nav-link">About us</a></li>
+										<li className="nav-items"><a href="/contactus" className="nav-link">Careers</a></li>
 										<li className="nav-items"><a href="" className="nav-link">Contact us</a></li>
 										<li className="nav-items"><a href="" className="nav-link">Blog</a></li>
 									</ul>
@@ -56,20 +56,20 @@ const Footer = () => {
 							<div className="col-md-4 col-sm-6">
 								<form>
 									<h3>Reach out to Us</h3>
-									<div class="form-group mb-2">
-										<input type="text" class="form-control" placeholder="Name" />
+									<div className="form-group mb-2">
+										<input type="text" className="form-control" placeholder="Name" />
 									</div>
 
-									<div class="form-group mb-2">
-										<input type="email" class="form-control" placeholder="Email" />
+									<div className="form-group mb-2">
+										<input type="email" className="form-control" placeholder="Email" />
 									</div>
 
-									<div class="form-group mb-2">
-										<input type="number" class="form-control" placeholder="Phone" />
+									<div className="form-group mb-2">
+										<input type="number" className="form-control" placeholder="Phone" />
 									</div>
 
-									<div class="form-group mb-2">
-										<textarea class="form-control" placeholder="Message" rows={4} />
+									<div className="form-group mb-2">
+										<textarea className="form-control" placeholder="Message" rows={4} />
 									</div>
 								</form>
 							</div>

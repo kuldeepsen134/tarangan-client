@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import instance from '../axios/axios'
 
 const initialState = {
-    loading: false,
+    loading: true,
     loggedInUser: {},
     isUserLoggedIn: localStorage.getItem('token') ? true : false
 }

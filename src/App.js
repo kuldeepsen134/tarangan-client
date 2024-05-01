@@ -10,6 +10,10 @@ import PublicLayout from "./layouts/publicLayout";
 import PublicRoutes from "./routes/public";
 
 import './style.scss';
+import './App.css'
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
+import HomePage from "./pages/Home";
 
 function App() {
   const { isUserLoggedIn } = useSelector((state) => state.auth)
@@ -22,18 +26,18 @@ function App() {
             <Route index element={<Navigate to={`/app/admindashboard`} />} />
             {PrivateRoutes.map((route, i) => {
               return (
-                  <Route
-                    key={i}
-                    path={route.path}
-                    element={<route.component />}
-                  />
+                <Route
+                  key={i}
+                  path={route.path}
+                  element={<route.component />}
+                />
               )
             })}
             <Route path="/app/*" element={<Navigate to={`/login`} />} />
           </Route>
 
           <Route path="/" element={<PublicLayout />}>
-            <Route index element={<Navigate to={`/home`} />} />
+            <Route index element={<HomePage />} />
             {PublicRoutes.map((route, i) => {
               return (
                 <Route
@@ -43,7 +47,7 @@ function App() {
                 />
               )
             })}
-            <Route path="/*" element={<Navigate to={`/home`} />} />
+            <Route path="/*" element={<Navigate to={`/`} />} />
           </Route>
         </Routes>
       </Suspense>

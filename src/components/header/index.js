@@ -22,7 +22,7 @@ const Header = () => {
 					<div className="container">
 						<div className="row align-items-center">
 							<div className="col-2">
-								<a href="" className="d-inline-block">
+								<a href="/" className="d-inline-block">
 									<img src={logo} alt="" className="img-fluid" />
 								</a>
 							</div>
@@ -33,15 +33,15 @@ const Header = () => {
 									<li className="nav-item"><a href="" className="nav-link">Hobelf printing</a></li>
 									<li className="nav-item"><a href="" className="nav-link">Software products</a></li>
 									<li className="nav-item"><a href="" className="nav-link">Dedicated Resources</a></li>
-									<li className="nav-item"><a href="" className="nav-link">E-Commerce</a></li>
+									<li className="nav-item"><a href="/products" className="nav-link">E-Commerce</a></li>
 									{/* <li className="nav-item"><a href="" className="nav-link"><img src={cart} alt="" className="img-fluid"/></a></li> */}
-									<div class="dropdown">
-										<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									<div className="dropdown">
+										<button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 											Dropdown button
 										</button>
-										<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-											<li><a class="dropdown-item" href="/login">Login</a></li>
-											<li><a class="dropdown-item" href="/signUp">Register</a></li>
+										<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+											<li><a className="dropdown-item" href="/login">Login</a></li>
+											<li><a className="dropdown-item" href="/signUp">Register</a></li>
 										</ul>
 									</div>
 								</ul>
