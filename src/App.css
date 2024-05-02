@@ -110,3 +110,16 @@ label.radio input:checked + span {
 .contact-detail p {
   font-size: 25px;
 }
+
+
+.tarangan2 {
+  background-image:
+  url(https://nakshatratechnohub.com/wp-content/uploads/2022/08/2.Compress-jpg.jpg);
+  height: 100vh;
+}
+
+.think-plan {
+  background-image: 
+  url(https://nakshatratechnohub.com/wp-content/uploads/2022/08/1.Compress.jpg);
+  height: 100vh;
+}
