@@ -5,6 +5,7 @@
 body {
   background-color: #000;
 }
+
 .card {
   border: none;
 }
@@ -120,6 +121,21 @@ label.radio input:checked + span {
 
 .think-plan {
   background-image: 
-  url(https://nakshatratechnohub.com/wp-content/uploads/2022/08/1.Compress.jpg);
+  url(https://nakshatratechnohub.com/wp-content/uploads/2022/08/1.Compress.jpg
+  );
   height: 100vh;
 }
+
+
+.form-outline {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-toggle {
+  font-size: 15px;
+  padding: 0 10px;
+}
+

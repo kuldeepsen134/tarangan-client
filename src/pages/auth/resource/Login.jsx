@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoginPage = () => {
+const ResourceLoginPage = () => {
   return (
     <section className="vh-100">
       <div className="container-fluid h-custom">
@@ -14,14 +14,34 @@ const LoginPage = () => {
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
             <form>
-                <div data-mdb-input-init="" className=" mb-4">
-              
+              <div data-mdb-input-init="" className="form-outline mb-4">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label className="form-check-label" for="flexRadioDefault1">
+                  Customer
+                </label>
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                />
+                <label className="form-check-label" for="flexRadioDefault1">
+                  Agency
+                </label>
+              </div>
+              <div data-mdb-input-init="" className=" mb-4">
                 <input
                   type="email"
                   id="form3Example3"
                   className="form-control form-control-lg"
                   placeholder="Enter a valid email address"
                 />
+      
               </div>
               {/* Password input */}
               <div data-mdb-input-init="" className=" mb-3">
@@ -31,7 +51,7 @@ const LoginPage = () => {
                   className="form-control form-control-lg"
                   placeholder="Enter password"
                 />
-            
+
               </div>
               <div className="d-flex justify-content-between align-items-center">
                 {/* Checkbox */}
@@ -50,7 +70,7 @@ const LoginPage = () => {
                   Forgot password?
                 </a>
               </div>
-              <div className="text-center text-lg-start mt-4 pt-2">
+              <div className="text-center  mt-4 pt-2">
                 <button
                   type="button"
                   data-mdb-button-init=""
@@ -61,7 +81,7 @@ const LoginPage = () => {
                   Login
                 </button>
                 <p className="small fw-bold mt-2 pt-1 mb-0">
-                  Don't have an account?{" "}
+                  Don't have an account?
                   <a href="/signUp" className="link-danger">
                     Register
                   </a>
@@ -71,9 +91,8 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };
 
-export default LoginPage;
+export default ResourceLoginPage;

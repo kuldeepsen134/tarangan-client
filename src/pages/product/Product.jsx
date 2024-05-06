@@ -2,14 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Product = () => {
-
-const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   return (
     <section style={{ backgroundColor: "#eee" }}>
-      <div className="container py-5">
-        <div className="row">
+      <div className="pb-5">
+        <div className=" pb-5">
           <div
             id="carouselExampleControls"
             className="carousel slide"
@@ -19,14 +17,14 @@ const navigate = useNavigate()
               <div className="carousel-item active">
                 <img
                   src="https://themes.pixelstrap.com/multikart/assets/images/home-banner/2.jpg"
-                  className="d-block h-85vh  "
+                  className="d-block h-85vh w-100  "
                   alt="..."
                 />
               </div>
               <div className="carousel-item">
                 <img
                   src="https://themes.pixelstrap.com/multikart/assets/images/home-banner/1.jpg"
-                  className="d-block h-85vh "
+                  className="d-block h-85vh w-100"
                   alt="..."
                 />
               </div>
@@ -52,11 +50,11 @@ const navigate = useNavigate()
           </div>
         </div>
 
-        <div className="row">
+        <div className="row mx-0">
           <div className="col-md-12 col-lg-4 mb-4 mb-lg-0">
             <div className="card text-black">
               <img
-               onClick={()=>navigate('/products/151515')}
+                onClick={() => navigate("/products/151515")}
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-product-cards/img1.webp"
                 className="card-img-top"
                 alt="iPhone"
@@ -92,7 +90,7 @@ const navigate = useNavigate()
           <div className="col-md-6 col-lg-4 mb-4 mb-md-0">
             <div className="card text-black">
               <img
-               onClick={()=>navigate('/products/151515')}
+                onClick={() => navigate("/products/151515")}
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-product-cards/img2.webp"
                 className="card-img-top"
                 alt="iPhone"
@@ -128,7 +126,7 @@ const navigate = useNavigate()
           <div className="col-md-6 col-lg-4 mb-4 mb-md-0">
             <div className="card text-black">
               <img
-               onClick={()=>navigate('/products/151515')}
+                onClick={() => navigate("/products/151515")}
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-product-cards/img3.webp"
                 className="card-img-top"
                 alt="iPhone"
