@@ -165,14 +165,6 @@ const ResourceLSignUp = () => {
                     ) : (
                       <form className="mx-1 mx-md-4">
                         <div className="row align-items-center mb-4">
-                          {/* <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-user fa-lg me-3 fa-fw" />
-                          <div
-                            data-mdb-input-init=""
-                            className="form-outline flex-fill mb-0"
-                          ></div>
-                        </div> */}
-
                           <div className="col-sm-6 ps-0">
                             <i className="fas fa-user fa-lg me-3 fa-fw" />
                             <div

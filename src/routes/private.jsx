@@ -1,3 +1,4 @@
+import { CustomerProfile } from "../pages/auth";
 import MyAccount from "../pages/auth/MyAccount";
 import AddToCart from "../pages/cart/AddToCart";
 import Checkout from "../pages/cart/Checkout";
@@ -10,6 +11,11 @@ const PrivateRoutes = [
     component: VenderProfilePage,
   },
   { path: "/app/MyAccount", name: "MyAccount", component: MyAccount },
+  {
+    path: "/app/user/profile",
+    name: "CustomerProfile",
+    component: CustomerProfile,
+  },
 
   { path: "/app/cart", name: "AddToCart", component: AddToCart },
   { path: "/app/checkout", name: "Checkout", component: Checkout },

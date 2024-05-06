@@ -9,6 +9,10 @@ import ResourceSignUp from "./resource/SignUp";
 import ResourceForgot from "./resource/Forgot";
 import ResourceUpdatePassword from "./resource/UpdatePassword";
 
+
+import CustomerProfile from "./resource/CustomerProfile";
+
+
 export {
   SignUp,
   LoginPage,
@@ -21,4 +25,5 @@ export {
   ResourceSignUp,
   ResourceForgot,
   ResourceUpdatePassword,
+  CustomerProfile,
 };

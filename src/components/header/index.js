@@ -43,6 +43,11 @@ const Header = () => {
 											<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 												<li><a className="dropdown-item" href="/resourceLogin">Login</a></li>
 												<li><a className="dropdown-item" href="/resourceSignUp">Register</a></li>
+												<li>
+													<a className="dropdown-item" href="/app/user/profile">
+														Account
+													</a>
+												</li>
 											</ul>
 										</div>
 									</li>
