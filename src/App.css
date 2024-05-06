@@ -139,3 +139,13 @@ label.radio input:checked + span {
   padding: 0 10px;
 }
 
+
+
+a {
+  color: inherit!important;
+}
+
+
+li.nav-item a , li.nav-item .dropdown .custom-drop {  
+  font-size: 20px;
+}

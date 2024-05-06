@@ -45,7 +45,7 @@ const Header = () => {
 											</ul>
 										</div>
 									</li>
-									<li className="nav-item"><a href="/products" className="nav-link">E-Commerce</a></li>
+									<li className="nav-item"><a href="/shop" className="nav-link">E-Commerce</a></li>
 									<li className="nav-item">
 										<div className="dropdown">
 											<div className=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,7 +55,8 @@ const Header = () => {
 												<li><a className="dropdown-item" href="/login">Login</a></li>
 												<li><a className="dropdown-item" href="/signUp">Register</a></li>
 											</ul>
-										</div></li>
+										</div>
+									</li>
 
 								</ul>
 							</div>

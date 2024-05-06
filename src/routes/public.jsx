@@ -26,7 +26,7 @@ const PublicRoutes = [
 
 
 
-  { path: '/products', exact: true, name: 'Products', component: Product },
+  { path: '/shop', exact: true, name: 'Products', component: Product },
   { path: '/products/:id', exact: true, name: 'ProductSingle', component: ProductSingle },
   { path: '/contactus', exact: true, name: 'ContactUs', component: ContactUs },
 
