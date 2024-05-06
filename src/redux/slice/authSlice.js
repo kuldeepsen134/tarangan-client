@@ -5,7 +5,7 @@ import instance from '../axios/axios'
 const initialState = {
     loading: true,
     loggedInUser: {},
-    isUserLoggedIn: localStorage.getItem('token') ? true : false
+    isUserLoggedIn: localStorage.getItem('token') ? true : true
 }
 
 export const login = createAsyncThunk('account/login', async (data, { rejectWithValue }) => {

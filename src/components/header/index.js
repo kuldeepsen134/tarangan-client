@@ -24,6 +24,7 @@ const Header = () => {
 							<div className="col-2">
 								<a href="/" className="d-inline-block">
 									<img src={logo} alt="" className="img-fluid" />
+									{/* <p className='text-center'>Tarangan Solutions</p> */}
 								</a>
 							</div>
 							<div className="col-10">
@@ -46,18 +47,6 @@ const Header = () => {
 										</div>
 									</li>
 									<li className="nav-item"><a href="/shop" className="nav-link">E-Commerce</a></li>
-									<li className="nav-item">
-										<div className="dropdown">
-											<div className=" dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-												Dropdown button
-											</div>
-											<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-												<li><a className="dropdown-item" href="/login">Login</a></li>
-												<li><a className="dropdown-item" href="/signUp">Register</a></li>
-											</ul>
-										</div>
-									</li>
-
 								</ul>
 							</div>
 						</div>
