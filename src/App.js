@@ -22,6 +22,7 @@ import HomePage from "./pages/Home";
 
 function App() {
   const { isUserLoggedIn } = useSelector((state) => state.auth)
+  const { loggedInResource } = useSelector((state) => state.session)
 
   return (
     <BrowserRouter>
@@ -42,7 +43,7 @@ function App() {
           </Route>
           
           {/* Resource accessible routes */}
-          <Route path="/app" element={isUserLoggedIn ? <PrivateLayoutResource /> : <Navigate to='/resourceLogin' />} >
+          <Route path="/app" element={loggedInResource ? <PrivateLayoutResource /> : <Navigate to='/resourceLogin' />} >
             <Route index element={<Navigate to={`/app/admindashboard`} />} />
             {PrivateRoutesResource.map((route, i) => {
               return (
