@@ -4,9 +4,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/slice/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -20,9 +22,10 @@ const LoginPage = () => {
       password: Yup.string().required("Please provide your password."),
     }),
 
-    onSubmit: (values, { resetForm }) => {
-      dispatch(login(values));
-      resetForm();
+    onSubmit: (values) => {
+      dispatch(login(values)).then((result) => {
+        result?.payload?.token ? navigate("/shop") : navigate("/login");
+      });
     },
   });
 

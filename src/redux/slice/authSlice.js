@@ -6,7 +6,7 @@ const initialState = {
     loading: true,
     loggedInUser: {},
     userData: {},
-    isUserLoggedIn: localStorage.getItem('token') ? true : true
+    isUserLoggedIn: localStorage.getItem('accessToken') ? true : false
 }
 
 export const login = createAsyncThunk('account/login', async (data, { rejectWithValue }) => {
@@ -46,7 +46,7 @@ const authSlice = createSlice({
                 state.isUserLoggedIn = true
                 state.loggedInUser = action.payload
                 toast.success(action.payload.message);
-                localStorage.setItem('token', action?.payload?.token)
+                localStorage.setItem('accessToken', action?.payload?.token)
             })
             .addCase(login.rejected, (state,) => {
                 state.loading = false
@@ -63,7 +63,7 @@ const authSlice = createSlice({
                 state.isUserLoggedIn = true
                 state.loggedInUser = action.payload
                 toast.success(action.payload.message);
-                localStorage.setItem('token', action?.payload?.token)
+                localStorage.setItem('accessToken', action?.payload?.token)
             })
             .addCase(register.rejected, (state, action) => {
                 state.loading = false

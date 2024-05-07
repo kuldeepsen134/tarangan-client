@@ -74,6 +74,14 @@ const AppHeader = () => {
                               Account
                             </a>
                           </li>
+                          <li>
+                            <button
+                              className="dropdown-item"
+                              onClick={() => localStorage.removeItem("accessToken")}
+                            >
+                              Logout
+                            </button>
+                          </li>
                         </ul>
                       </div>
                     </li>
