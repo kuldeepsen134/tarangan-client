@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Tab, Nav, Row, Col } from "react-bootstrap";
+
 const MyAccount = () => {
   const [key, setKey] = useState("myDetails");
+
   return (
     <>
       <section className="py-100">

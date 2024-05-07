@@ -1,27 +1,60 @@
 import React from "react";
 
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/slice/authSlice";
+
 const LoginPage = () => {
+  const dispatch = useDispatch();
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Please provide your email."),
+      password: Yup.string().required("Please provide your password."),
+    }),
+
+    onSubmit: (values, { resetForm }) => {
+      dispatch(login(values));
+      resetForm();
+    },
+  });
+
   return (
     <section className="vh-100">
-      <div className="container-fluid h-custom">
+      <div className="ks-container-fluid h-custom">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img
               src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
               className="img-fluid"
-              alt="Sample image"
+              alt="Sampleimage"
             />
           </div>
           <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-            <form>
-                <div data-mdb-input-init="" className=" mb-4">
-              
+            <form onSubmit={formik.handleSubmit}>
+              <div data-mdb-input-init="" className=" mb-4">
                 <input
                   type="email"
                   id="form3Example3"
                   className="form-control form-control-lg"
                   placeholder="Enter a valid email address"
+                  name="email"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
                 />
+              </div>
+              <div className="errorMessage text-danger">
+                {formik.touched.email && formik.errors.email ? (
+                  <div>{formik.errors.email}</div>
+                ) : null}
               </div>
               {/* Password input */}
               <div data-mdb-input-init="" className=" mb-3">
@@ -30,8 +63,16 @@ const LoginPage = () => {
                   id="form3Example4"
                   className="form-control form-control-lg"
                   placeholder="Enter password"
+                  name="password"
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  value={formik.values.password}
                 />
-            
+              </div>
+              <div className="errorMessage text-danger">
+                {formik.touched.password && formik.errors.password ? (
+                  <div>{formik.errors.password}</div>
+                ) : null}
               </div>
               <div className="d-flex justify-content-between align-items-center">
                 {/* Checkbox */}
@@ -52,7 +93,7 @@ const LoginPage = () => {
               </div>
               <div className="text-center text-lg-start mt-4 pt-2">
                 <button
-                  type="button"
+                  type="submit"
                   data-mdb-button-init=""
                   data-mdb-ripple-init=""
                   className="btn btn-primary btn-lg"
@@ -71,7 +112,6 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };

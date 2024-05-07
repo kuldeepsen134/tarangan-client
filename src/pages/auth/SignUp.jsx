@@ -1,6 +1,41 @@
 import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { register } from "../../redux/slice/authSlice";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+
+  const formik = useFormik({
+    initialValues: {
+      full_name: "",
+      mobile: "",
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      full_name: Yup.string()
+        .min(4, "Atleast 4 characters or more")
+        .max(15, "Must be 15 characters or less")
+        .required("Please provide your full name."),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Please provide your email."),
+      password: Yup.string()
+        .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/, {
+          message: "Please create a stronger password",
+        })
+        .required("Please provide your password."),
+      mobile: Yup.string().required("Please provide your mobile."),
+    }),
+
+    onSubmit: (values, { resetForm }) => {
+      dispatch(register(values));
+      resetForm();
+    },
+  });
+
   return (
     <section className="vh-100" style={{ backgroundColor: "#eee" }}>
       <div className="container h-100">
@@ -14,7 +49,10 @@ const SignUp = () => {
                       Sign up
                     </p>
 
-                    <form className="mx-1 mx-md-4">
+                    <form
+                      onSubmit={formik.handleSubmit}
+                      className="mx-1 mx-md-4"
+                    >
                       <div className="d-flex flex-row align-items-center mb-4">
                         <i className="fas fa-user fa-lg me-3 fa-fw" />
                         <div
@@ -23,11 +61,19 @@ const SignUp = () => {
                         >
                           <input
                             type="text"
-                            id="form3Example1c"
                             className="form-control"
-                            placeholder=" Your Name"
+                            name="full_name"
+                            onChange={formik.handleChange}
+                            value={formik.values.full_name}
+                            placeholder=" Your Full Name"
+                            onBlur={formik.handleBlur}
                           />
                         </div>
+                      </div>
+                      <div className="errorMessage text-danger ">
+                        {formik.touched.full_name && formik.errors.full_name ? (
+                          <div>{formik.errors.full_name}</div>
+                        ) : null}
                       </div>
                       <div className="d-flex flex-row align-items-center mb-4">
                         <i className="fas fa-envelope fa-lg me-3 fa-fw" />
@@ -37,11 +83,19 @@ const SignUp = () => {
                         >
                           <input
                             type="email"
-                            id="form3Example3c"
                             className="form-control"
                             placeholder=" Your Email"
+                            onBlur={formik.handleBlur}
+                            name="email"
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
                           />
                         </div>
+                      </div>
+                      <div className="errorMessage text-danger">
+                        {formik.touched.email && formik.errors.email ? (
+                          <div>{formik.errors.email}</div>
+                        ) : null}
                       </div>
 
                       <div className="d-flex flex-row align-items-center mb-4">
@@ -51,12 +105,20 @@ const SignUp = () => {
                           className="form-outline flex-fill mb-0"
                         >
                           <input
-                            type="mobile"
-                            id="form3Example3c"
+                            type="text"
                             className="form-control"
                             placeholder="Moible"
+                            onBlur={formik.handleBlur}
+                            name="mobile"
+                            onChange={formik.handleChange}
+                            value={formik.values.mobile}
                           />
                         </div>
+                      </div>
+                      <div className="errorMessage text-danger">
+                        {formik.touched.mobile && formik.errors.mobile ? (
+                          <div>{formik.errors.mobile}</div>
+                        ) : null}
                       </div>
 
                       <div className="d-flex flex-row align-items-center mb-4">
@@ -66,26 +128,20 @@ const SignUp = () => {
                           className="form-outline flex-fill mb-0"
                         >
                           <input
-                            type="password"
-                            id="form3Example4c"
+                            type="text"
                             className="form-control"
                             placeholder="Password"
+                            name="password"
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                            value={formik.values.password}
                           />
                         </div>
                       </div>
-                      <div className="d-flex flex-row align-items-center mb-4">
-                        <i className="fas fa-key fa-lg me-3 fa-fw" />
-                        <div
-                          data-mdb-input-init=""
-                          className="form-outline flex-fill mb-0"
-                        >
-                          <input
-                            type="password"
-                            id="form3Example4cd"
-                            className="form-control"
-                            placeholder="Repeat your password"
-                          />
-                        </div>
+                      <div className="errorMessage text-danger">
+                        {formik.touched.password && formik.errors.password ? (
+                          <div>{formik.errors.password}</div>
+                        ) : null}
                       </div>
                       <div className="form-check d-flex justify-content-center mb-5">
                         <input
@@ -104,7 +160,7 @@ const SignUp = () => {
                       </div>
                       <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button
-                          type="button"
+                          type="submit"
                           data-mdb-button-init=""
                           data-mdb-ripple-init=""
                           className="btn btn-primary btn-lg"
@@ -118,7 +174,7 @@ const SignUp = () => {
                     <img
                       src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                       className="img-fluid"
-                      alt="Sample image"
+                      alt="SampleImage"
                     />
                   </div>
                 </div>
