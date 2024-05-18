@@ -6,7 +6,7 @@ const initialState = {
     loading: true,
     loggedInUser: {},
     userData: {},
-    isUserLoggedIn: localStorage.getItem('accessToken') ? true : false
+    isUserLoggedIn: localStorage.getItem('accessToken') ? true : true
 }
 
 export const login = createAsyncThunk('account/login', async (data, { rejectWithValue }) => {

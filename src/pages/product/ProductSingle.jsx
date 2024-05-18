@@ -1,10 +1,19 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import InnerImageZoom from "react-inner-image-zoom";
+import { useDispatch, useSelector } from "react-redux";
+import { productById } from "../../redux/slice/product/product.slice";
 
 const ProductSingle = () => {
   const navigate = useNavigate();
+  const { id } = useParams()
+  const dispatch = useDispatch();
+  const { productData } = useSelector((state) => state.product)
 
+  useEffect(() => {
+    dispatch(productById(id))
+  }, [dispatch])
+  console.log('data', productData);
   return (
     <div className="container mt-5 mb-5">
       <div className="row d-flex justify-content-center">
@@ -45,22 +54,16 @@ const ProductSingle = () => {
                     <i className="fa fa-shopping-cart text-muted" />
                   </div>
                   <div className="mt-4 mb-3">
-                    <span className="text-uppercase text-muted brand">
-                      Orianz
-                    </span>
-                    <h5 className="text-uppercase">Men's slim fit t-shirt</h5>
+                    <h5 className="text-uppercase">{productData && productData.name}</h5>
                     <div className="price d-flex flex-row align-items-center">
-                      <span className="act-price">$20</span>
-                      <div className="ml-2">
-                        <small className="dis-price">$59</small>
-                        <span>40% OFF</span>
-                      </div>
+                      <span className="act-price">Price:- Rs.{productData && productData.price}</span>
+                      {/* <div className="ml-2">
+                        <small className="dis-price">Rs{productData && productData.price}</small>
+                      </div> */}
                     </div>
                   </div>
                   <p className="about">
-                    Shop from a wide range of t-shirt from orianz. Pefect for
-                    your everyday use, you could pair it with a stylish pair of
-                    jeans or trousers complete the look.
+                    {productData && productData.description}
                   </p>
                   <div className="sizes mt-5">
                     <h6 className="text-uppercase">Size</h6>

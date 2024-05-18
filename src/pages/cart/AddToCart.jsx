@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddToCart = () => {
   const navigate = useNavigate();
+  
   return (
     <section className=" gradient-custom">
       <div className="container py-5">
